@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Divider } from '@nextui-org/react'
+import { Card, CardHeader, CardBody, Divider, Chip } from '@nextui-org/react'
 
 export default function HomeContainer ({ miHorario }) {
   function formatoHora (numero) {
@@ -27,17 +27,19 @@ export default function HomeContainer ({ miHorario }) {
           <div key={index} className='col-span-1'>
             <Card>
               <CardHeader>
-                <p className='text-small'>{asignatura.nombre}</p>
+                <p className='text-sm font-bold'>{asignatura.nombre}</p>
               </CardHeader>
               <Divider />
               <CardBody className='flex flex-col gap-4'>
                 {asignatura.horario.map((horario, index) => (
                   <div key={index} className='flex flex-col gap-2'>
-                    <div className='flex flex-row justify-between'>
-                      <p className='text-small'>{horario.dia.toUpperCase()}</p>
-                      <p className='text-small font-semibold'>{formatoHora(horario.horaInicio)} - {formatoHora(horario.horaFin)}</p>
+                    <div className='flex flex-row justify-between items-center'>
+                      <Chip size='sm' className='bg-udenar-primary'>
+                        <p className='text-white font-semibold'>{horario.dia.toUpperCase()}</p>
+                      </Chip>
+                      <p className='text-sm font-semibold'>{formatoHora(horario.horaInicio)} - {formatoHora(horario.horaFin)}</p>
                     </div>
-                    <p className='text-small'>{horario.ubicacion}</p>
+                    <p className='text-sm'>{horario.ubicacion}</p>
                   </div>
                 ))}
               </CardBody>

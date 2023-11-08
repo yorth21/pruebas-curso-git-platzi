@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import { AuthContext } from './context/authContext'
 import HomePage from './pages/HomePage'
 import LayoutPage from './pages/LayaoutPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App () {
   const { alumno } = useContext(AuthContext)
@@ -24,6 +25,8 @@ function App () {
           <Route path='/login' element={<PrivateRoute isAllowed={!alumno.codAlumno} />}>
             <Route path='/login' element={<LoginPage />} />
           </Route>
+
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
 
         <Toaster position='bottom-right' />
