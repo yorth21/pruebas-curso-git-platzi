@@ -22,7 +22,7 @@ export default function HomeContainer ({ miHorario }) {
         </CardBody>
       </Card>
 
-      <div className='grid grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {miHorario.asignaturas.map((asignatura, index) => (
           <div key={index} className='col-span-1'>
             <Card>
