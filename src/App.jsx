@@ -9,20 +9,20 @@ import LayoutPage from './pages/LayaoutPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App () {
-  const { alumno } = useContext(AuthContext)
+  const { horarioAlumno } = useContext(AuthContext)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route element={<PrivateRoute isAllowed={!!alumno.codAlumno} redirectTo='/login' />}>
+          <Route element={<PrivateRoute isAllowed={!!horarioAlumno} redirectTo='/login' />}>
             <Route path='/' element={<LayoutPage />}>
               <Route path='/' element={<Navigate to='/home' />} />
               <Route path='/home' element={<HomePage />} />
             </Route>
           </Route>
 
-          <Route path='/login' element={<PrivateRoute isAllowed={!alumno.codAlumno} />}>
+          <Route path='/login' element={<PrivateRoute isAllowed={!horarioAlumno} />}>
             <Route path='/login' element={<LoginPage />} />
           </Route>
 

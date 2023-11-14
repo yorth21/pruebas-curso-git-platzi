@@ -1,6 +1,18 @@
-import { Card, CardHeader, CardBody, Divider, Chip } from '@nextui-org/react'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Divider,
+  Chip,
+  Table,
+  TableHeader,
+  TableColumn,
+  TableBody,
+  TableRow,
+  TableCell
+} from '@nextui-org/react'
 
-export default function HomeContainer ({ miHorario }) {
+export default function HomeContainer ({ horarioAlumno }) {
   function formatoHora (numero) {
     if (numero >= 0 && numero <= 11) {
       return numero + ':00 AM'
@@ -11,6 +23,41 @@ export default function HomeContainer ({ miHorario }) {
     }
   }
 
+  return (
+    <div className='p-6 flex flex-col gap-4'>
+      <Card className='bg-green-100 p-2'>
+        <CardBody>
+          <div className='flex flex-col gap-2 text-udenar-primary'>
+            <h2 className='text-3xl font-semibold'>Bienvenidx</h2>
+            <p>{horarioAlumno.nombreAlumno}</p>
+          </div>
+        </CardBody>
+      </Card>
+
+      <Table aria-label='Tabla horarios'>
+        <TableHeader>
+          <TableColumn>Dia</TableColumn>
+          <TableColumn>Hora</TableColumn>
+          <TableColumn>Asignatura</TableColumn>
+          <TableColumn>Salon</TableColumn>
+          <TableColumn>Tipo</TableColumn>
+        </TableHeader>
+        <TableBody>
+          {horarioAlumno.asignaturas.map((asignatura, index) => (
+            <TableRow key={index}>
+              <TableCell>{asignatura.dia}</TableCell>
+              <TableCell>{formatoHora(asignatura.horaInicio)} - {formatoHora(asignatura.horaFin)}</TableCell>
+              <TableCell>{asignatura.nombre}</TableCell>
+              <TableCell>{asignatura.ubicacion}</TableCell>
+              <TableCell>{asignatura.tipo}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+  )
+
+  /*
   return (
     <div className='p-6 flex flex-col gap-4'>
       <Card className='bg-green-100 p-2'>
@@ -49,4 +96,5 @@ export default function HomeContainer ({ miHorario }) {
       </div>
     </div>
   )
+  */
 }

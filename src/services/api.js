@@ -10,11 +10,7 @@ export async function post (url, data, config = {}) {
     const response = await api.post(url, data, config)
     return response.data
   } catch (error) {
-    if (error.response) {
-      return error.response.data
-    } else {
-      return { error: 'Sin codigo de error' }
-    }
+    return error.response.data
   }
 }
 
@@ -23,22 +19,18 @@ export async function get (url, config = {}) {
     const response = await api.get(url, config)
     return response.data
   } catch (error) {
-    if (error.response) {
-      return error.response.data
-    } else {
-      return { error: 'Sin codigo de error' }
-    }
+    return error.response.data
   }
 }
 
-export function setToken (token) {
-  window.localStorage.setItem('token', token)
+export function setLocalStorage (name, token) {
+  window.localStorage.setItem(name, token)
 }
 
-export function getToken () {
-  return window.localStorage.getItem('token')
+export function getLocalStorage (name) {
+  return window.localStorage.getItem(name)
 }
 
-export function removeToken () {
-  window.localStorage.removeItem('token')
+export function removeLocalStorage (name) {
+  window.localStorage.removeItem(name)
 }
