@@ -6,6 +6,7 @@ export const AuthContext = createContext()
 
 export function AuthProvider ({ children }) {
   // Usar un loading para mostrar un spinner mientras se comprueba el token
+  // Utilizando este proyecto para curso de git de platzi jajajaj
   const [horarioAlumno, setHorarioAlumno] = useState(null)
   const TTL = 1000 * 60 * 60 * 24 * parseInt(import.meta.env.VITE_TTL_DIAS)
 
