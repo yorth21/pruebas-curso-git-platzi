@@ -5,6 +5,7 @@ import toast from 'react-hot-toast'
 export const AuthContext = createContext()
 
 export function AuthProvider ({ children }) {
+  // Usar un loading para mostrar un spinner mientras se comprueba el token
   const [horarioAlumno, setHorarioAlumno] = useState(null)
   const TTL = 1000 * 60 * 60 * 24 * parseInt(import.meta.env.VITE_TTL_DIAS)
 
