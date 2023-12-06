@@ -17,8 +17,6 @@ export default function Header () {
             <h1 className='text-center text-3xl'>Mi horario <b>Udenar</b></h1>
           </Link>
 
-          <h3>Yorth21</h3>
-
           <Tooltip content='Salir'>
             <button className='text-white text-3xl' onClick={logout}>
               <FaSignInAlt />
