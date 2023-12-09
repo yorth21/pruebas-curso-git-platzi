@@ -8,6 +8,7 @@ export default function NotFoundPage () {
       <div className='bg-udenar-primary text-white px-2 text-sm rounded rotate-12 absolute'>
         Pagina no encontrada
         <i>Experimento</i>
+        <i>Experimento dos</i>
       </div>
       <NavLink
         to='/'
