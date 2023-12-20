@@ -6,7 +6,9 @@ export default function NotFoundPage () {
     <main className='h-screen w-full flex flex-col justify-center items-center'>
       <h1 className='text-9xl font-extrabold text-[#1A2238] tracking-widest'>404</h1>
       <div className='bg-udenar-primary text-white px-2 text-sm rounded rotate-12 absolute'>
-        Page Not Found
+        Pagina no encontrada
+        <i>Experimento</i>
+        <i>Experimento dos</i>
       </div>
       <NavLink
         to='/'
